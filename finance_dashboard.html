@@ -608,7 +608,7 @@
 
         <div>
           <label class="block text-[11px] text-slate-400 mb-1">Google Apps Script Web App URL (/exec):</label>
-          <input type="url" id="modalGSheetUrl" placeholder="https://script.google.com/macros/s/.../exec"
+          <input type="url" id="modalGSheetUrl" value="https://script.google.com/macros/s/AKfycbzSt6cIqVAzfNrMcglzFJZeaHbATILI892EC4NJul_k9Q180fvMTRiRNBBmBFfs7Pwu9w/exec" placeholder="https://script.google.com/macros/s/.../exec"
             class="w-full px-3 py-2 text-xs bg-slate-900 border border-slate-700 rounded-xl text-white placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono">
         </div>
 
@@ -670,7 +670,8 @@
     let income = 35000;
     let formulaKey = "balanced";
         let activeTab = "overview";
-    let gsheetUrl = "";
+        const DEFAULT_GSHEET_URL = "https://script.google.com/macros/s/AKfycbzSt6cIqVAzfNrMcglzFJZeaHbATILI892EC4NJul_k9Q180fvMTRiRNBBmBFfs7Pwu9w/exec";
+    let gsheetUrl = DEFAULT_GSHEET_URL;
 
     const pocketCategoryMap = {
       needs: "1. จำเป็น (Needs)",
@@ -847,13 +848,10 @@
         const savedFormula = localStorage.getItem('mf_formula');
         if (savedFormula && formulas[savedFormula]) formulaKey = savedFormula;
 
-        const savedGSheet = localStorage.getItem('mf_gsheet_url');
-        if (savedGSheet) {
-          gsheetUrl = savedGSheet;
-          updateSyncStatusUI('online');
-        } else {
-          updateSyncStatusUI('offline');
-        }
+        const savedGSheet = localStorage.getItem('mf_gsheet_url') || DEFAULT_GSHEET_URL;
+        gsheetUrl = savedGSheet;
+        localStorage.setItem('mf_gsheet_url', gsheetUrl);
+        updateSyncStatusUI('online');
 
         const savedExpenses = localStorage.getItem('mf_expenses');
         if (savedExpenses) {
