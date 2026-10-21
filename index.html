@@ -434,6 +434,17 @@
         </div>
 
         <!-- Mobile Card List for Transactions (No awkward horizontal scroll!) -->
+                <!-- Google Sheets Not Connected Notice -->
+        <div id="gsheetConnectNotice" class="hidden p-3 rounded-xl bg-blue-500/10 border border-blue-500/20 text-xs text-blue-300 flex items-center justify-between gap-2">
+          <div class="flex items-center gap-2">
+            <span class="text-base shrink-0">☁️</span>
+            <span class="text-[11px]">บันทึกในเครื่องแล้ว แตะเชื่อมต่อเพื่อให้วิ่งเข้า Google Sheets อัตโนมัติ</span>
+          </div>
+          <button type="button" onclick="toggleSettingsModal()" class="px-2.5 py-1 bg-blue-600 hover:bg-blue-500 active:scale-95 text-white rounded-lg font-bold text-[11px] shrink-0 transition">
+            เชื่อมต่อ ⚙️
+          </button>
+        </div>
+
         <div id="mobileTransactionList" class="space-y-2.5">
           <!-- Dynamically populated cards -->
         </div>
@@ -974,7 +985,11 @@
     }
 
     // Render Transaction History Cards
-    function renderHistoryList() {
+        function renderHistoryList() {
+      const notice = document.getElementById('gsheetConnectNotice');
+      if (notice) {
+        notice.classList.toggle('hidden', !!(gsheetUrl && gsheetUrl.startsWith('http')));
+      }
       const filter = document.getElementById('mFilterCategory').value;
       const container = document.getElementById('mobileTransactionList');
       const emptyState = document.getElementById('mEmptyState');
@@ -1091,10 +1106,10 @@
       document.getElementById('mTitle').value = '';
 
       if (gsheetUrl && gsheetUrl.startsWith('http')) {
-        showToast(`บันทึก ${title} (${fmt(amount)}) แล้ว! (ส่งเข้าชีต 🟢)`);
+        showToast(`บันทึก ${title} (${fmt(amount)}) แล้ว! (ซิงค์เข้า Google Sheets 🟢)`);
         sendExpenseToGSheet(newItem);
       } else {
-        showToast(`บันทึก ${title} (${fmt(amount)}) แล้ว!`);
+        showToast(`บันทึกในเครื่องแล้ว! (ยังไม่ได้เชื่อม Google Sheets แตะ ⚙️ เพื่อเชื่อมต่อ)`);
       }
       
       setTimeout(() => switchTab('overview'), 500);
