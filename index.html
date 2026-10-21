@@ -16,8 +16,14 @@
       font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Sarabun', sans-serif;
       -webkit-tap-highlight-color: transparent;
     }
+    /* Mobile Safe Area Insets for iOS Notch / Dynamic Island / Status Bar */
+    .safe-top {
+      padding-top: 16px;
+      padding-top: max(calc(env(safe-area-inset-top, 0px) + 10px), 16px);
+    }
     .pb-safe {
-      padding-bottom: env(safe-area-inset-bottom, 20px);
+      padding-bottom: 20px;
+      padding-bottom: max(env(safe-area-inset-bottom, 0px), 20px);
     }
     .no-scrollbar::-webkit-scrollbar {
       display: none;
@@ -31,7 +37,7 @@
 <body class="bg-slate-900 text-slate-100 antialiased min-h-screen pb-24 md:pb-10">
 
   <!-- Mobile Top Sticky Header -->
-  <header class="sticky top-0 z-40 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 px-4 py-3">
+  <header class="sticky top-0 z-40 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 px-4 shadow-sm" style="padding-top: max(calc(env(safe-area-inset-top, 0px) + 10px), 22px); padding-bottom: 12px;">
     <div class="max-w-5xl mx-auto flex items-center justify-between">
       <div class="flex items-center gap-2.5">
         <div class="w-9 h-9 rounded-xl shadow-md overflow-hidden shrink-0 flex items-center justify-center bg-blue-600">
@@ -73,7 +79,7 @@
       <div class="flex items-center gap-2">
         <button type="button" onclick="toggleSettingsModal()" id="headerSyncBadge" class="flex items-center gap-1.5 px-2.5 py-2 rounded-xl bg-slate-800/90 hover:bg-slate-700 active:bg-slate-600 border border-slate-700 text-xs font-semibold text-slate-300 transition select-none" title="สถานะเชื่อมต่อ Google Sheets">
           <span class="w-2 h-2 rounded-full bg-slate-500" id="headerSyncDot"></span>
-          <span id="headerSyncText" class="text-[11px] hidden sm:inline">ออฟไลน์</span>
+          <span id="headerSyncText" class="text-[11px] inline font-semibold">ชีตออนไลน์</span>
         </button>
 
         <button type="button" onclick="toggleSettingsModal()" class="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 active:bg-slate-600 border border-slate-700 text-xs font-semibold text-slate-200 active:scale-95 transition cursor-pointer select-none">
