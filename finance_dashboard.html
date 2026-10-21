@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Manage money">
+  <meta name="theme-color" content="#0f172a">
+  <title>Manage money</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYmciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMjU2M2ViIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iNjAlIiBzdG9wLWNvbG9yPSIjMWQ0ZWQ4Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzBmMTcyYSIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZ29sZCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNmZWYwOGEiLz4KICAgIDxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjZmFjYzE1Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2NhOGEwNCIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iY2FyZCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMzOGJkZjgiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDI4NGM3Ii8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIgcng9IjI4IiBmaWxsPSJ1cmwoI2JnKSIvPgogIDxyZWN0IHg9IjQiIHk9IjQiIHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiByeD0iMjQiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjIpIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8cmVjdCB4PSIyMiIgeT0iMzgiIHdpZHRoPSI4NCIgaGVpZ2h0PSI1NCIgcng9IjEyIiBmaWxsPSJ1cmwoI2NhcmQpIiBvcGFjaXR5PSIwLjk1Ii8+CiAgPHJlY3QgeD0iMjIiIHk9IjQ4IiB3aWR0aD0iODQiIGhlaWdodD0iMTAiIGZpbGw9IiMwZjE3MmEiIG9wYWNpdHk9IjAuNCIvPgogIDxjaXJjbGUgY3g9IjgyIiBjeT0iNzIiIHI9IjIyIiBmaWxsPSJ1cmwoI2dvbGQpIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMi41Ii8+CiAgPGNpcmNsZSBjeD0iODIiIGN5PSI3MiIHI9IjE3IiBmaWxsPSJub25lIiBzdHJva2U9IiNhMTYyMDciIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtZGFzaGFycmF5PSIzIDIiLz4KICA8dGV4dCB4PSI4MiIgeT0iNzkiIGZvbnQtZmFtaWx5PSJzeXN0ZW0tdWksIC1hcHBsZS1zeXN0ZW0sIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiM3MTNmMTIiIHRleHQtYW5jaG9yPSJtaWRkbGUiPuC4vywvdGV4dD4KICA8cGF0aCBkPSJNMzYgNzYgTDQ2IDY2IEw1NCA3MiBMNjYgNTYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KICA8cGF0aCBkPSJNNjAgNTYgTDY2IDU2IEw2NiA2MiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4=">
+  <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYmciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMjU2M2ViIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iNjAlIiBzdG9wLWNvbG9yPSIjMWQ0ZWQ4Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzBmMTcyYSIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZ29sZCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNmZWYwOGEiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiByeD0iMjgiIGZpbGw9InVybCgjYmcpIi8+CiAgPHJlY3QgeD0iNCIgeT0iNCIgd2lkdGg9IjEyMCIgaGVpZ2h0PSIxMjAiIHJ4PSIyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMikiIHN0cm9rZS13aWR0aD0iMiIvPgogIDxyZWN0IHg9IjIyIiB5PSIzOCIgd2lkdGg9Ijg0IiBoZWlnaHQ9IjU0IiByeD0iMTIiIGZpbGw9IiMzOGJkZjgiIG9wYWNpdHk9IjAuOTUiLz4KICA8Y2lyY2xlIGN4PSI4MiIgY3k9IjcyIiByPSIyMiIgZmlsbD0idXJsKCNnb2xkKSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjIuNSIvPgogIDx0ZXh0IHg9IjgyIiB5PSI3OSIgZm9udC1mYW1pbHk9InN5c3RlbS11aSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iIzcxM2YxMiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+4Li/PC90ZXh0Pgo8L3N2Zz4=">
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Sarabun', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .pb-safe {
+      padding-bottom: env(safe-area-inset-bottom, 20px);
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 antialiased min-h-screen pb-24 md:pb-10">
+
+  <!-- Mobile Top Sticky Header -->
+  <header class="sticky top-0 z-40 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 px-4 py-3">
+    <div class="max-w-5xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <div class="w-9 h-9 rounded-xl shadow-md overflow-hidden shrink-0 flex items-center justify-center bg-blue-600">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" class="w-full h-full">
+            <defs>
+              <linearGradient id="hbg" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#2563eb"/>
+                <stop offset="60%" stop-color="#1d4ed8"/>
+                <stop offset="100%" stop-color="#0f172a"/>
+              </linearGradient>
+              <linearGradient id="hgold" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#fef08a"/>
+                <stop offset="50%" stop-color="#facc15"/>
+                <stop offset="100%" stop-color="#ca8a04"/>
+              </linearGradient>
+              <linearGradient id="hcard" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#38bdf8"/>
+                <stop offset="100%" stop-color="#0284c7"/>
+              </linearGradient>
+            </defs>
+            <rect width="128" height="128" rx="28" fill="url(#hbg)"/>
+            <rect x="4" y="4" width="120" height="120" rx="24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+            <rect x="22" y="38" width="84" height="54" rx="12" fill="url(#hcard)" opacity="0.95"/>
+            <rect x="22" y="48" width="84" height="10" fill="#0f172a" opacity="0.4"/>
+            <circle cx="82" cy="72" r="22" fill="url(#hgold)" stroke="#ffffff" stroke-width="2.5"/>
+            <circle cx="82" cy="72" r="17" fill="none" stroke="#a16207" stroke-width="1.5" stroke-dasharray="3 2"/>
+            <text x="82" y="79" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="900" fill="#713f12" text-anchor="middle">฿</text>
+            <path d="M36 76 L46 66 L54 72 L66 56" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M60 56 L66 56 L66 62" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div>
+          <h1 class="text-base md:text-lg font-bold leading-tight text-white">Manage money</h1>
+          <p class="text-xs text-slate-400" id="headerDateLabel">ตุลาคม 2026</p>
+        </div>
+      </div>
+
+      <!-- Quick Income & Settings Button -->
+      <button onclick="toggleSettingsModal()" class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800 border border-slate-700 text-xs font-medium text-slate-200 active:scale-95 transition">
+        <span class="text-emerald-400 font-bold" id="headerIncomeText">฿35,000</span>
+        <span class="text-slate-400 text-xs">⚙️</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="max-w-5xl mx-auto p-4 space-y-5">
+
+    <!-- DESKTOP / TABLET TABS NAVIGATION (Visible on md screens) -->
+    <div class="hidden md:flex items-center justify-center gap-2 p-1.5 bg-slate-800/80 rounded-2xl border border-slate-700 max-w-md mx-auto">
+      <button onclick="switchTab('overview')" class="tab-btn active-tab flex-1 py-2 text-xs font-semibold rounded-xl transition" data-tab="overview">
+        📊 ภาพรวม
+      </button>
+      <button onclick="switchTab('add')" class="tab-btn flex-1 py-2 text-xs font-semibold rounded-xl text-slate-400 hover:text-white transition" data-tab="add">
+        ➕ บันทึกรายจ่าย
+      </button>
+      <button onclick="switchTab('history')" class="tab-btn flex-1 py-2 text-xs font-semibold rounded-xl text-slate-400 hover:text-white transition" data-tab="history">
+        📋 ประวัติรายการ
+      </button>
+      <button onclick="switchTab('plan')" class="tab-btn flex-1 py-2 text-xs font-semibold rounded-xl text-slate-400 hover:text-white transition" data-tab="plan">
+        ⚡ รูทีนเงินเดือน
+      </button>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- TAB 1: OVERVIEW (ภาพรวม & กระเป๋าเงิน) -->
+    <!-- ========================================== -->
+    <section id="tab-overview" class="space-y-4">
+
+      <!-- Today's Hero Daily Allowance Card -->
+      <div class="bg-gradient-to-br from-blue-900/40 via-slate-800 to-slate-800 border border-blue-500/30 rounded-2xl p-5 shadow-lg relative overflow-hidden">
+        <div class="absolute -right-4 -bottom-4 w-28 h-28 bg-blue-500/10 rounded-full blur-2xl"></div>
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-blue-500/20 text-blue-300">
+            งบกิน-เที่ยว วันนี้
+          </span>
+          <span class="text-xs text-slate-400" id="remainDaysHero">เหลือ 11 วันในเดือน</span>
+        </div>
+
+        <div class="mt-3 flex items-baseline justify-between">
+          <div>
+            <p class="text-xs text-slate-400">ใช้ได้เฉลี่ยวันนี้</p>
+            <p class="text-3xl font-extrabold text-emerald-400 tracking-tight mt-0.5" id="heroDailyAllow">฿292</p>
+          </div>
+          <div class="text-right">
+            <p class="text-xs text-slate-400">วันนี้จ่ายไปแล้ว</p>
+            <p class="text-lg font-bold text-amber-400 mt-0.5" id="heroTodaySpent">฿0</p>
+          </div>
+        </div>
+
+        <!-- Progress of Total Monthly Budget Spent -->
+        <div class="mt-4 pt-3 border-t border-slate-700/60">
+          <div class="flex justify-between text-xs text-slate-400 mb-1">
+            <span>ภาพรวมการใช้งบทั้งเดือน:</span>
+            <span id="heroOverallPct" class="font-bold text-emerald-400">0%</span>
+          </div>
+          <div class="w-full bg-slate-900 h-2 rounded-full overflow-hidden border border-slate-700/80">
+            <div id="heroOverallBar" class="bg-gradient-to-r from-emerald-500 to-blue-500 h-full rounded-full transition-all duration-300" style="width: 0%"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Action Buttons on Mobile -->
+      <div class="grid grid-cols-2 gap-3 md:hidden">
+        <button onclick="switchTab('add')" class="flex items-center justify-center gap-2 py-3 px-4 bg-blue-600 active:bg-blue-700 text-white rounded-xl font-bold text-xs shadow-md transition active:scale-98">
+          <span class="text-base">➕</span> บันทึกค่าใช้จ่าย
+        </button>
+        <button onclick="switchTab('history')" class="flex items-center justify-center gap-2 py-3 px-4 bg-slate-800 border border-slate-700 active:bg-slate-700 text-slate-200 rounded-xl font-bold text-xs transition active:scale-98">
+          <span class="text-base">📋</span> ดูประวัติ (<span id="quickHistoryCount">0</span>)
+        </button>
+      </div>
+
+      <!-- 4 Pockets Status Cards -->
+      <div>
+        <div class="flex items-center justify-between mb-2.5">
+          <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400">สถานะ 4 กระเป๋าเงิน (Pockets)</h2>
+          <span class="text-xs text-blue-400 font-medium" id="pocketFormulaName">สูตร 50/20/25/5</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          
+          <!-- Pocket 1: Needs -->
+          <div class="bg-slate-800 border border-slate-700 rounded-2xl p-4 shadow-sm relative overflow-hidden">
+            <div class="absolute top-0 left-0 right-0 h-1 bg-amber-500"></div>
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-semibold px-2 py-0.5 rounded bg-amber-500/10 text-amber-400" id="cardNeedsPct">50%</span>
+              <span class="text-base">🏠 จำเป็น</span>
+            </div>
+            <div class="mt-2.5 flex items-baseline justify-between">
+              <div>
+                <p class="text-xs text-slate-400">เหลืองบ</p>
+                <p class="text-lg font-bold text-white mt-0.5" id="cardNeedsRemain">฿17,500</p>
+              </div>
+              <div class="text-right text-xs">
+                <span class="text-slate-400">งบ: </span><span class="text-slate-300" id="cardNeedsBudget">฿17,500</span>
+                <p class="text-amber-400 font-medium" id="cardNeedsSpent">ใช้ ฿0</p>
+              </div>
+            </div>
+            <div class="w-full bg-slate-900 h-1.5 rounded-full overflow-hidden mt-3">
+              <div id="cardNeedsBar" class="bg-amber-500 h-full rounded-full transition-all duration-300" style="width: 0%"></div>
+            </div>
+          </div>
+
+          <!-- Pocket 2: Wealth & Savings -->
+          <div class="bg-slate-800 border border-slate-700 rounded-2xl p-4 shadow-sm relative overflow-hidden">
+            <div class="absolute top-0 left-0 right-0 h-1 bg-emerald-500"></div>
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-semibold px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400" id="cardSavingsPct">20%</span>
+              <span class="text-base">🏦 ออม & ลงทุน</span>
+            </div>
+            <div class="mt-2.5 flex items-baseline justify-between">
+              <div>
+                <p class="text-xs text-slate-400">ออมแล้ว</p>
+                <p class="text-lg font-bold text-emerald-400 mt-0.5" id="cardSavingsSpent">฿0</p>
+              </div>
+              <div class="text-right text-xs">
+                <span class="text-slate-400">เป้าหมาย: </span><span class="text-slate-300" id="cardSavingsBudget">฿7,000</span>
+                <p class="text-slate-400 font-medium" id="cardSavingsRemain">เหลืออีก ฿7,000</p>
+              </div>
+            </div>
+            <div class="w-full bg-slate-900 h-1.5 rounded-full overflow-hidden mt-3">
+              <div id="cardSavingsBar" class="bg-emerald-500 h-full rounded-full transition-all duration-300" style="width: 0%"></div>
+            </div>
+          </div>
+
+          <!-- Pocket 3: Lifestyle & Wants -->
+          <div class="bg-slate-800 border border-slate-700 rounded-2xl p-4 shadow-sm relative overflow-hidden">
+            <div class="absolute top-0 left-0 right-0 h-1 bg-blue-500"></div>
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-semibold px-2 py-0.5 rounded bg-blue-500/10 text-blue-400" id="cardWantsPct">25%</span>
+              <span class="text-base">🛍️ ใช้ชีวิต</span>
+            </div>
+            <div class="mt-2.5 flex items-baseline justify-between">
+              <div>
+                <p class="text-xs text-slate-400">เหลืองบ</p>
+                <p class="text-lg font-bold text-blue-400 mt-0.5" id="cardWantsRemain">฿8,750</p>
+              </div>
+              <div class="text-right text-xs">
+                <span class="text-slate-400">งบ: </span><span class="text-slate-300" id="cardWantsBudget">฿8,750</span>
+                <p class="text-blue-400 font-medium" id="cardWantsSpent">ใช้ ฿0</p>
+              </div>
+            </div>
+            <div class="w-full bg-slate-900 h-1.5 rounded-full overflow-hidden mt-3">
+              <div id="cardWantsBar" class="bg-blue-500 h-full rounded-full transition-all duration-300" style="width: 0%"></div>
+            </div>
+          </div>
+
+          <!-- Pocket 4: Growth -->
+          <div class="bg-slate-800 border border-slate-700 rounded-2xl p-4 shadow-sm relative overflow-hidden">
+            <div class="absolute top-0 left-0 right-0 h-1 bg-purple-500"></div>
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-semibold px-2 py-0.5 rounded bg-purple-500/10 text-purple-400" id="cardGrowthPct">5%</span>
+              <span class="text-base">📚 พัฒนาตน</span>
+            </div>
+            <div class="mt-2.5 flex items-baseline justify-between">
+              <div>
+                <p class="text-xs text-slate-400">เหลืองบ</p>
+                <p class="text-lg font-bold text-purple-400 mt-0.5" id="cardGrowthRemain">฿1,750</p>
+              </div>
+              <div class="text-right text-xs">
+                <span class="text-slate-400">งบ: </span><span class="text-slate-300" id="cardGrowthBudget">฿1,750</span>
+                <p class="text-purple-400 font-medium" id="cardGrowthSpent">ใช้ ฿0</p>
+              </div>
+            </div>
+            <div class="w-full bg-slate-900 h-1.5 rounded-full overflow-hidden mt-3">
+              <div id="cardGrowthBar" class="bg-purple-500 h-full rounded-full transition-all duration-300" style="width: 0%"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Donut Chart & Visual Breakdown -->
+      <div class="bg-slate-800 border border-slate-700 rounded-2xl p-5 shadow-sm">
+        <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">สัดส่วนกระเป๋าเงิน (Donut Chart)</h2>
+        <div class="flex flex-col sm:flex-row items-center justify-around gap-4">
+          <div class="relative flex items-center justify-center">
+            <svg class="w-36 h-36 transform -rotate-90" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="38" stroke="currentColor" stroke-width="14" fill="transparent" class="text-slate-900" />
+              <circle id="donutNeeds" cx="50" cy="50" r="38" stroke="#f59e0b" stroke-width="14" fill="transparent" stroke-dasharray="238.76" stroke-dashoffset="0" class="transition-all duration-500" />
+              <circle id="donutSavings" cx="50" cy="50" r="38" stroke="#10b981" stroke-width="14" fill="transparent" stroke-dasharray="238.76" stroke-dashoffset="119.38" class="transition-all duration-500" />
+              <circle id="donutWants" cx="50" cy="50" r="38" stroke="#3b82f6" stroke-width="14" fill="transparent" stroke-dasharray="238.76" stroke-dashoffset="167.13" class="transition-all duration-500" />
+              <circle id="donutGrowth" cx="50" cy="50" r="38" stroke="#a855f7" stroke-width="14" fill="transparent" stroke-dasharray="238.76" stroke-dashoffset="226.82" class="transition-all duration-500" />
+            </svg>
+            <div class="absolute text-center">
+              <span class="text-xs text-slate-400">รายรับ</span>
+              <p class="text-sm font-bold text-white" id="donutTotalText">฿35,000</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-xs">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-amber-500"></span>
+              <span class="text-slate-300">จำเป็น (50%)</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+              <span class="text-slate-300">ออม (20%)</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-blue-500"></span>
+              <span class="text-slate-300">ใช้ชีวิต (25%)</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-purple-500"></span>
+              <span class="text-slate-300">พัฒนาตน (5%)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ========================================== -->
+    <!-- TAB 2: ADD EXPENSE (แบบฟอร์มบันทึกด่วนสำหรับมือถือ) -->
+    <!-- ========================================== -->
+    <section id="tab-add" class="space-y-4 hidden md:block">
+      <div class="bg-slate-800 border border-slate-700 rounded-2xl p-5 shadow-lg max-w-lg mx-auto">
+        <div class="flex items-center justify-between pb-3 border-b border-slate-700 mb-4">
+          <h2 class="text-base font-bold text-white flex items-center gap-2">
+            <span>✏️</span> บันทึกค่าใช้จ่าย
+          </h2>
+          <span class="text-xs text-slate-400" id="formTodayLabel">21/10/2026</span>
+        </div>
+
+        <form id="mobileExpenseForm" class="space-y-4">
+          <!-- Big Touch Amount Input with Number Pad -->
+          <div>
+            <label class="block text-xs font-medium text-slate-400 mb-1">จำนวนเงิน (บาท)</label>
+            <div class="relative">
+              <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-xl font-bold text-emerald-400">฿</span>
+              <input type="number" id="mAmount" inputmode="decimal" step="1" min="1" placeholder="0" required
+                class="w-full pl-11 pr-4 py-3 text-2xl font-bold bg-slate-900 border border-slate-700 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+          </div>
+
+          <!-- Quick Amount Chips for Rapid Logging -->
+          <div class="flex items-center gap-2 no-scrollbar overflow-x-auto py-1">
+            <span class="text-xs text-slate-400 whitespace-nowrap">ลัด:</span>
+            <button type="button" onclick="setQuickAmount(50)" class="px-3 py-1.5 rounded-lg bg-slate-700/60 hover:bg-slate-700 active:scale-95 text-xs font-semibold text-slate-200 transition">฿50</button>
+            <button type="button" onclick="setQuickAmount(100)" class="px-3 py-1.5 rounded-lg bg-slate-700/60 hover:bg-slate-700 active:scale-95 text-xs font-semibold text-slate-200 transition">฿100</button>
+            <button type="button" onclick="setQuickAmount(200)" class="px-3 py-1.5 rounded-lg bg-slate-700/60 hover:bg-slate-700 active:scale-95 text-xs font-semibold text-slate-200 transition">฿200</button>
+            <button type="button" onclick="setQuickAmount(500)" class="px-3 py-1.5 rounded-lg bg-slate-700/60 hover:bg-slate-700 active:scale-95 text-xs font-semibold text-slate-200 transition">฿500</button>
+            <button type="button" onclick="setQuickAmount(1000)" class="px-3 py-1.5 rounded-lg bg-slate-700/60 hover:bg-slate-700 active:scale-95 text-xs font-semibold text-slate-200 transition">฿1,000</button>
+          </div>
+
+          <!-- Category Selection: Touch Pills -->
+          <div>
+            <label class="block text-xs font-medium text-slate-400 mb-1.5">เลือกกระเป๋าเงิน</label>
+            <div class="grid grid-cols-2 gap-2" id="categoryPillGroup">
+              <button type="button" onclick="selectCategory('wants')" data-cat="wants"
+                class="cat-pill active flex items-center gap-2 p-3 rounded-xl border border-blue-500 bg-blue-500/10 text-blue-300 text-xs font-semibold text-left transition">
+                <span class="text-base">🛍️</span>
+                <div>
+                  <p class="leading-tight">ใช้ชีวิต (Wants)</p>
+                  <span class="text-xs text-slate-400">กินเที่ยว, กาแฟ</span>
+                </div>
+              </button>
+
+              <button type="button" onclick="selectCategory('needs')" data-cat="needs"
+                class="cat-pill flex items-center gap-2 p-3 rounded-xl border border-slate-700 bg-slate-900 text-slate-300 text-xs font-semibold text-left transition">
+                <span class="text-base">🏠</span>
+                <div>
+                  <p class="leading-tight">จำเป็น (Needs)</p>
+                  <span class="text-xs text-slate-400">ค่าห้อง, น้ำไฟ, หนี้</span>
+                </div>
+              </button>
+
+              <button type="button" onclick="selectCategory('growth')" data-cat="growth"
+                class="cat-pill flex items-center gap-2 p-3 rounded-xl border border-slate-700 bg-slate-900 text-slate-300 text-xs font-semibold text-left transition">
+                <span class="text-base">📚</span>
+                <div>
+                  <p class="leading-tight">เติบโต (Growth)</p>
+                  <span class="text-xs text-slate-400">หนังสือ, คอร์ส</span>
+                </div>
+              </button>
+
+              <button type="button" onclick="selectCategory('savings')" data-cat="savings"
+                class="cat-pill flex items-center gap-2 p-3 rounded-xl border border-slate-700 bg-slate-900 text-slate-300 text-xs font-semibold text-left transition">
+                <span class="text-base">🏦</span>
+                <div>
+                  <p class="leading-tight">ออม/ลงทุน</p>
+                  <span class="text-xs text-slate-400">โอนเก็บ e-Savings</span>
+                </div>
+              </button>
+            </div>
+            <input type="hidden" id="mCategory" value="wants">
+          </div>
+
+          <!-- Description & Quick Title Tags -->
+          <div>
+            <label class="block text-xs font-medium text-slate-400 mb-1">ชื่อรายการ</label>
+            <input type="text" id="mTitle" placeholder="เช่น ค่าข้าวเที่ยง, กาแฟ, BTS, ช้อปปิ้ง" required
+              class="w-full px-3.5 py-2.5 text-sm bg-slate-900 border border-slate-700 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+            
+            <!-- Quick Tag Suggestions -->
+            <div class="flex items-center gap-1.5 no-scrollbar overflow-x-auto mt-2">
+              <button type="button" onclick="setQuickTitle('อาหาร')" class="px-2.5 py-1 rounded-md bg-slate-700/50 text-xs text-slate-300 hover:bg-slate-700">อาหาร</button>
+              <button type="button" onclick="setQuickTitle('กาแฟ/เครื่องดื่ม')" class="px-2.5 py-1 rounded-md bg-slate-700/50 text-xs text-slate-300 hover:bg-slate-700">กาแฟ</button>
+              <button type="button" onclick="setQuickTitle('เดินทาง/BTS/น้ำมัน')" class="px-2.5 py-1 rounded-md bg-slate-700/50 text-xs text-slate-300 hover:bg-slate-700">เดินทาง</button>
+              <button type="button" onclick="setQuickTitle('ช้อปปิ้ง/ของใช้')" class="px-2.5 py-1 rounded-md bg-slate-700/50 text-xs text-slate-300 hover:bg-slate-700">ช้อปปิ้ง</button>
+            </div>
+          </div>
+
+          <!-- Date -->
+          <div>
+            <label class="block text-xs font-medium text-slate-400 mb-1">วันที่</label>
+            <input type="date" id="mDate" required
+              class="w-full px-3.5 py-2 text-xs bg-slate-900 border border-slate-700 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit"
+            class="w-full py-3.5 px-4 bg-blue-600 hover:bg-blue-500 active:scale-98 text-white font-bold text-sm rounded-xl transition shadow-lg flex items-center justify-center gap-2">
+            <span>💾</span> บันทึกค่าใช้จ่าย
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- TAB 3: TRANSACTION HISTORY (ประวัติรายการ) -->
+    <!-- ========================================== -->
+    <section id="tab-history" class="space-y-4 hidden md:block">
+      <div class="bg-slate-800 border border-slate-700 rounded-2xl p-4 md:p-5 shadow-sm">
+        
+        <!-- Header & Filter -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+          <div>
+            <h2 class="text-base font-bold text-white flex items-center gap-2">
+              <span>📋</span> ประวัติค่าใช้จ่าย
+            </h2>
+            <p class="text-xs text-slate-400">บันทึกอัตโนมัติในโทรศัพท์ / คอมพิวเตอร์ของคุณ</p>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <select id="mFilterCategory" onchange="renderHistoryList()"
+              class="py-1.5 px-3 text-xs bg-slate-900 border border-slate-700 rounded-xl text-white focus:outline-none flex-1 sm:flex-none">
+              <option value="all">ทุกกระเป๋า</option>
+              <option value="wants">🛍️ ใช้ชีวิต</option>
+              <option value="needs">🏠 จำเป็น</option>
+              <option value="growth">📚 เติบโต</option>
+              <option value="savings">🏦 ออม</option>
+            </select>
+
+            <button onclick="exportCSV()" class="px-3 py-1.5 bg-slate-700 hover:bg-slate-600 text-xs font-semibold text-slate-200 rounded-xl transition">
+              📥 CSV
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Card List for Transactions (No awkward horizontal scroll!) -->
+        <div id="mobileTransactionList" class="space-y-2.5">
+          <!-- Dynamically populated cards -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="mEmptyState" class="py-12 text-center text-slate-400 hidden">
+          <span class="text-3xl">📝</span>
+          <p class="text-sm font-medium mt-2">ยังไม่มีรายการค่าใช้จ่าย</p>
+          <p class="text-xs text-slate-500 mt-1">แตะปุ่ม "บันทึก" เพื่อเริ่มจดรายการแรก</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- TAB 4: ROUTINE & FINANCIAL RULES -->
+    <!-- ========================================== -->
+    <section id="tab-plan" class="space-y-4 hidden md:block">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        
+        <!-- Payday Checklist -->
+        <div class="bg-slate-800 border border-slate-700 rounded-2xl p-5 shadow-sm">
+          <h2 class="text-base font-bold text-white flex items-center gap-2 mb-3">
+            <span>⚡</span> รูทีนเมื่อเงินเดือนออก (Payday)
+          </h2>
+          <div class="space-y-2.5">
+            <label class="flex items-start gap-3 p-3 rounded-xl bg-slate-900 border border-slate-700 cursor-pointer">
+              <input type="checkbox" checked class="mt-1 w-4 h-4 rounded text-blue-600">
+              <div>
+                <p class="text-xs font-bold text-white">1. ตัดเงินออม & ลงทุนทันที</p>
+                <p class="text-xs text-slate-400 mt-0.5">โอนเข้าพอร์ต DCA หรือบัญชี e-Savings ดอกเบี้ยสูง ห้ามแช่ไว้ในบัญชีใช้จ่าย</p>
+              </div>
+            </label>
+
+            <label class="flex items-start gap-3 p-3 rounded-xl bg-slate-900 border border-slate-700 cursor-pointer">
+              <input type="checkbox" checked class="mt-1 w-4 h-4 rounded text-blue-600">
+              <div>
+                <p class="text-xs font-bold text-white">2. เคลียร์บิลคงที่ทั้งหมด</p>
+                <p class="text-xs text-slate-400 mt-0.5">จ่ายค่าห้อง, ค่าน้ำไฟ, ค่าเน็ต, ค่างวดรถ/บัตรเครดิตเต็มจำนวนทันที</p>
+              </div>
+            </label>
+
+            <label class="flex items-start gap-3 p-3 rounded-xl bg-slate-900 border border-slate-700 cursor-pointer">
+              <input type="checkbox" class="mt-1 w-4 h-4 rounded text-blue-600">
+              <div>
+                <p class="text-xs font-bold text-white">3. แบ่งโอนเงินใช้ชีวิตสัปดาห์ละก้อน</p>
+                <p class="text-xs text-slate-400 mt-0.5">โอนเข้าบัญชีใช้จ่ายสัปดาห์ละครั้ง ป้องกันเงินหมดต้นเดือน</p>
+              </div>
+            </label>
+
+            <label class="flex items-start gap-3 p-3 rounded-xl bg-slate-900 border border-slate-700 cursor-pointer">
+              <input type="checkbox" class="mt-1 w-4 h-4 rounded text-blue-600">
+              <div>
+                <p class="text-xs font-bold text-white">4. ทบทวนสิ้นเดือน Rebalance</p>
+                <p class="text-xs text-slate-400 mt-0.5">หากมีเงินเหลือในกระเป๋าใช้ชีวิต ปัน 50% เก็บเพิ่ม และ 50% ให้รางวัลตัวเอง</p>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- 4 Golden Rules & Phone Add tip -->
+        <div class="space-y-4">
+          <div class="bg-slate-800 border border-slate-700 rounded-2xl p-5 shadow-sm">
+            <h2 class="text-base font-bold text-white flex items-center gap-2 mb-3">
+              <span>📱</span> วิธีติดตั้งบนหน้าจอมือถือ (Add to Home Screen)
+            </h2>
+            <div class="space-y-2 text-xs text-slate-300">
+              <p>• <strong>iPhone (Safari):</strong> แตะปุ่มแชร์ <code>Share (ไอคอนสี่เหลี่ยมลูกศรชี้ขึ้น)</code> ➔ เลือก <strong>"Add to Home Screen" (เพิ่มไปยังหน้าจอโฮม)</strong></p>
+              <p>• <strong>Android (Chrome):</strong> แตะจุด 3 จุดมุมขวาบน ➔ เลือก <strong>"Add to Home screen" (เพิ่มลงในหน้าจอหลัก)</strong></p>
+              <p class="text-emerald-400 pt-1">✨ เมื่อติดตั้งแล้วจะเปิดใช้งานเหมือนแอปจริงเต็มจอ ไม่มีแถบเว็บมารบกวน และใช้งานแบบ Offline ได้ 100%</p>
+            </div>
+          </div>
+
+          <div class="bg-slate-800 border border-slate-700 rounded-2xl p-5 shadow-sm">
+            <h2 class="text-base font-bold text-white flex items-center gap-2 mb-2">
+              <span>🛡️</span> เงินสำรองฉุกเฉินเป้าหมาย (6 เดือน)
+            </h2>
+            <p class="text-2xl font-bold text-amber-400" id="planEmergencyGoal">฿105,000</p>
+            <p class="text-xs text-slate-400 mt-1">แนะนำเก็บในบัญชี e-Savings ดอกเบี้ยสูง (MAKE by KBank, Dime!, LHB You)</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================== -->
+  <!-- MOBILE BOTTOM NAVIGATION BAR (FIXED) -->
+  <!-- ========================================== -->
+  <nav class="fixed bottom-0 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur-lg border-t border-slate-800 md:hidden pb-safe">
+    <div class="grid grid-cols-4 h-16 items-center">
+      
+      <!-- Nav Item 1: Overview -->
+      <button onclick="switchTab('overview')" class="nav-item flex flex-col items-center justify-center gap-1 text-blue-400" data-tab="overview">
+        <span class="text-lg">📊</span>
+        <span class="text-xs font-semibold">ภาพรวม</span>
+      </button>
+
+      <!-- Nav Item 2: Quick Add -->
+      <button onclick="switchTab('add')" class="nav-item flex flex-col items-center justify-center gap-1 text-slate-400 hover:text-white" data-tab="add">
+        <div class="w-10 h-10 rounded-full bg-blue-600 -mt-5 flex items-center justify-center shadow-lg text-white text-xl active:scale-95 transition">
+          ➕
+        </div>
+        <span class="text-xs font-semibold">บันทึก</span>
+      </button>
+
+      <!-- Nav Item 3: History -->
+      <button onclick="switchTab('history')" class="nav-item flex flex-col items-center justify-center gap-1 text-slate-400 hover:text-white" data-tab="history">
+        <span class="text-lg">📋</span>
+        <span class="text-xs font-semibold">ประวัติ</span>
+      </button>
+
+      <!-- Nav Item 4: Plan -->
+      <button onclick="switchTab('plan')" class="nav-item flex flex-col items-center justify-center gap-1 text-slate-400 hover:text-white" data-tab="plan">
+        <span class="text-lg">⚡</span>
+        <span class="text-xs font-semibold">รูทีน</span>
+      </button>
+
+    </div>
+  </nav>
+
+  <!-- ========================================== -->
+  <!-- SETTINGS MODAL (Income & Formula) -->
+  <!-- ========================================== -->
+  <div id="settingsModal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-4 hidden">
+    <div class="bg-slate-800 border border-slate-700 w-full max-w-md rounded-t-3xl sm:rounded-2xl p-6 shadow-2xl space-y-4">
+      <div class="flex items-center justify-between pb-2 border-b border-slate-700">
+        <h3 class="text-base font-bold text-white flex items-center gap-2">
+          <span>⚙️</span> ตั้งค่าเงินเดือน & สูตร
+        </h3>
+        <button onclick="toggleSettingsModal()" class="w-8 h-8 rounded-full bg-slate-700 text-slate-300 flex items-center justify-center text-sm font-bold">✕</button>
+      </div>
+
+      <div>
+        <label class="block text-xs font-medium text-slate-400 mb-1">รายรับสุทธิต่อเดือน (บาท)</label>
+        <div class="relative">
+          <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-base font-bold text-emerald-400">฿</span>
+          <input type="number" id="modalIncomeInput" value="35000" step="500" min="1000" inputmode="decimal"
+            class="w-full pl-9 pr-4 py-2.5 text-lg font-bold bg-slate-900 border border-slate-700 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-xs font-medium text-slate-400 mb-1">สูตรการจัดสรรกระเป๋าเงิน</label>
+        <select id="modalFormulaSelect" class="w-full py-2.5 px-3 text-sm bg-slate-900 border border-slate-700 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <option value="balanced" selected>50/20/25/5 (สมดุลมาตรฐาน)</option>
+          <option value="wealth">45/30/20/5 (เน้นสร้างตัว/ลงทุน)</option>
+          <option value="debt">60/15/20/5 (มีภาระผ่อน/หนี้สิน)</option>
+        </select>
+      </div>
+
+      <div class="pt-2 flex gap-3">
+        <button onclick="saveSettingsModal()" class="flex-1 py-3 bg-blue-600 hover:bg-blue-500 font-bold text-xs text-white rounded-xl shadow transition">
+          บันทึกการตั้งค่า
+        </button>
+        <button onclick="clearAllExpensesPrompt()" class="py-3 px-4 bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 font-bold text-xs rounded-xl border border-rose-500/30 transition">
+          ล้างข้อมูล
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed top-16 left-1/2 transform -translate-x-1/2 z-50 bg-emerald-600 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg transition-all duration-300 opacity-0 pointer-events-none">
+    บันทึกรายการเรียบร้อย
+  </div>
+
+  <!-- Interactive JavaScript logic -->
+  <script>
+    const formulas = {
+      balanced: { needs: 0.50, savings: 0.20, wants: 0.25, growth: 0.05, label: "สูตร 50/20/25/5 (สมดุล)" },
+      wealth: { needs: 0.45, savings: 0.30, wants: 0.20, growth: 0.05, label: "สูตร 45/30/20/5 (เน้นออม)" },
+      debt: { needs: 0.60, savings: 0.15, wants: 0.20, growth: 0.05, label: "สูตร 60/15/20/5 (เน้นผ่อน)" }
+    };
+
+    const categoryMeta = {
+      needs: { label: "จำเป็น (Needs)", badgeClass: "bg-amber-500/10 text-amber-400 border border-amber-500/20", icon: "🏠" },
+      savings: { label: "ออม/ลงทุน (Wealth)", badgeClass: "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20", icon: "🏦" },
+      wants: { label: "ใช้ชีวิต (Wants)", badgeClass: "bg-blue-500/10 text-blue-400 border border-blue-500/20", icon: "🛍️" },
+      growth: { label: "พัฒนาตน (Growth)", badgeClass: "bg-purple-500/10 text-purple-400 border border-purple-500/20", icon: "📚" }
+    };
+
+    let expenses = [];
+    let income = 35000;
+    let formulaKey = "balanced";
+    let activeTab = "overview";
+
+    function fmt(n) {
+      return '฿' + Math.round(n).toLocaleString('th-TH');
+    }
+
+    // Tab Switcher
+    function switchTab(tabId) {
+      activeTab = tabId;
+      
+      const tabs = ['overview', 'add', 'history', 'plan'];
+      tabs.forEach(t => {
+        const el = document.getElementById('tab-' + t);
+        if (el) {
+          if (window.innerWidth < 768) {
+            el.classList.toggle('hidden', t !== tabId);
+          } else {
+            el.classList.toggle('hidden', t !== tabId);
+          }
+        }
+      });
+
+      // Update Mobile Nav Active styling
+      document.querySelectorAll('.nav-item').forEach(btn => {
+        const isCurrent = btn.getAttribute('data-tab') === tabId;
+        if (btn.querySelector('.w-10')) {
+          btn.classList.toggle('text-blue-400', isCurrent);
+        } else {
+          btn.classList.toggle('text-blue-400', isCurrent);
+          btn.classList.toggle('text-slate-400', !isCurrent);
+        }
+      });
+
+      // Update Desktop Nav Active styling
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        const isCurrent = btn.getAttribute('data-tab') === tabId;
+        btn.classList.toggle('bg-blue-600', isCurrent);
+        btn.classList.toggle('text-white', isCurrent);
+        btn.classList.toggle('text-slate-400', !isCurrent);
+      });
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Quick Form Helpers
+    function setQuickAmount(amt) {
+      const cur = parseFloat(document.getElementById('mAmount').value) || 0;
+      document.getElementById('mAmount').value = cur + amt;
+    }
+
+    function setQuickTitle(title) {
+      document.getElementById('mTitle').value = title;
+    }
+
+    function selectCategory(cat) {
+      document.getElementById('mCategory').value = cat;
+      document.querySelectorAll('.cat-pill').forEach(pill => {
+        const match = pill.getAttribute('data-cat') === cat;
+        if (match) {
+          pill.className = "cat-pill flex items-center gap-2 p-3 rounded-xl border border-blue-500 bg-blue-500/10 text-blue-300 text-xs font-semibold text-left transition";
+        } else {
+          pill.className = "cat-pill flex items-center gap-2 p-3 rounded-xl border border-slate-700 bg-slate-900 text-slate-300 text-xs font-semibold text-left transition";
+        }
+      });
+    }
+
+    // Modal
+    function toggleSettingsModal() {
+      const modal = document.getElementById('settingsModal');
+      modal.classList.toggle('hidden');
+      if (!modal.classList.contains('hidden')) {
+        document.getElementById('modalIncomeInput').value = income;
+        document.getElementById('modalFormulaSelect').value = formulaKey;
+      }
+    }
+
+    function saveSettingsModal() {
+      income = parseFloat(document.getElementById('modalIncomeInput').value) || 35000;
+      formulaKey = document.getElementById('modalFormulaSelect').value;
+      saveData();
+      renderAll();
+      toggleSettingsModal();
+      showToast('บันทึกการตั้งค่าแล้ว');
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.remove('opacity-0', 'pointer-events-none');
+      setTimeout(() => {
+        t.classList.add('opacity-0', 'pointer-events-none');
+      }, 2000);
+    }
+
+    // Load Data
+    function loadData() {
+      try {
+        const savedIncome = localStorage.getItem('mf_income');
+        if (savedIncome) income = parseFloat(savedIncome) || 35000;
+
+        const savedFormula = localStorage.getItem('mf_formula');
+        if (savedFormula && formulas[savedFormula]) formulaKey = savedFormula;
+
+        const savedExpenses = localStorage.getItem('mf_expenses');
+        if (savedExpenses) {
+          expenses = JSON.parse(savedExpenses);
+        } else {
+          expenses = [
+            { id: 1, date: new Date().toISOString().split('T')[0], title: 'กาแฟสด & ขนม', category: 'wants', amount: 95 },
+            { id: 2, date: new Date().toISOString().split('T')[0], title: 'อาหารกลางวัน', category: 'wants', amount: 80 }
+          ];
+          saveData();
+        }
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    function saveData() {
+      try {
+        localStorage.setItem('mf_income', income);
+        localStorage.setItem('mf_formula', formulaKey);
+        localStorage.setItem('mf_expenses', JSON.stringify(expenses));
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    // Render Logic
+    function renderAll() {
+      const f = formulas[formulaKey] || formulas.balanced;
+
+      // Header labels
+      document.getElementById('headerIncomeText').textContent = fmt(income);
+      document.getElementById('pocketFormulaName').textContent = f.label;
+
+      const now = new Date();
+      const thaiMonths = ["ม.ค.", "ก.พ.", "มี.ค.", "เม.ย.", "พ.ค.", "มิ.ย.", "ก.ค.", "ส.ค.", "ก.ย.", "ต.ค.", "พ.ย.", "ธ.ค."];
+      document.getElementById('headerDateLabel').textContent = `${thaiMonths[now.getMonth()]} ${now.getFullYear() + 543}`;
+      document.getElementById('formTodayLabel').textContent = `${now.getDate()} ${thaiMonths[now.getMonth()]}`;
+
+      // Budgets
+      const bNeeds = income * f.needs;
+      const bSavings = income * f.savings;
+      const bWants = income * f.wants;
+      const bGrowth = income * f.growth;
+
+      // Sum spent
+      let sNeeds = 0, sSavings = 0, sWants = 0, sGrowth = 0;
+      let todaySpent = 0;
+      const todayStr = now.toISOString().split('T')[0];
+
+      expenses.forEach(x => {
+        const amt = parseFloat(x.amount) || 0;
+        if (x.category === 'needs') sNeeds += amt;
+        else if (x.category === 'savings') sSavings += amt;
+        else if (x.category === 'wants') sWants += amt;
+        else if (x.category === 'growth') sGrowth += amt;
+
+        if (x.date === todayStr) todaySpent += amt;
+      });
+
+      const totalSpent = sNeeds + sSavings + sWants + sGrowth;
+
+      // Pocket 1: Needs
+      document.getElementById('cardNeedsPct').textContent = Math.round(f.needs * 100) + '%';
+      document.getElementById('cardNeedsBudget').textContent = fmt(bNeeds);
+      document.getElementById('cardNeedsSpent').textContent = `ใช้ ${fmt(sNeeds)}`;
+      document.getElementById('cardNeedsRemain').textContent = fmt(bNeeds - sNeeds);
+      const pctNeeds = Math.min((sNeeds / (bNeeds || 1)) * 100, 100);
+      document.getElementById('cardNeedsBar').style.width = pctNeeds + '%';
+      document.getElementById('cardNeedsBar').className = `h-full rounded-full transition-all duration-300 ${pctNeeds >= 100 ? 'bg-rose-500' : 'bg-amber-500'}`;
+
+      // Pocket 2: Savings
+      document.getElementById('cardSavingsPct').textContent = Math.round(f.savings * 100) + '%';
+      document.getElementById('cardSavingsBudget').textContent = fmt(bSavings);
+      document.getElementById('cardSavingsSpent').textContent = fmt(sSavings);
+      document.getElementById('cardSavingsRemain').textContent = `เหลืออีก ${fmt(Math.max(bSavings - sSavings, 0))}`;
+      const pctSavings = Math.min((sSavings / (bSavings || 1)) * 100, 100);
+      document.getElementById('cardSavingsBar').style.width = pctSavings + '%';
+
+      // Pocket 3: Wants
+      document.getElementById('cardWantsPct').textContent = Math.round(f.wants * 100) + '%';
+      document.getElementById('cardWantsBudget').textContent = fmt(bWants);
+      document.getElementById('cardWantsSpent').textContent = `ใช้ ${fmt(sWants)}`;
+      const remainWants = bWants - sWants;
+      document.getElementById('cardWantsRemain').textContent = fmt(remainWants);
+      const pctWants = Math.min((sWants / (bWants || 1)) * 100, 100);
+      document.getElementById('cardWantsBar').style.width = pctWants + '%';
+      document.getElementById('cardWantsBar').className = `h-full rounded-full transition-all duration-300 ${pctWants >= 100 ? 'bg-rose-500' : 'bg-blue-500'}`;
+
+      // Pocket 4: Growth
+      document.getElementById('cardGrowthPct').textContent = Math.round(f.growth * 100) + '%';
+      document.getElementById('cardGrowthBudget').textContent = fmt(bGrowth);
+      document.getElementById('cardGrowthSpent').textContent = `ใช้ ${fmt(sGrowth)}`;
+      document.getElementById('cardGrowthRemain').textContent = fmt(bGrowth - sGrowth);
+      const pctGrowth = Math.min((sGrowth / (bGrowth || 1)) * 100, 100);
+      document.getElementById('cardGrowthBar').style.width = pctGrowth + '%';
+
+      // Hero Card Calculation
+      const lastDayOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
+      const remainDays = Math.max(lastDayOfMonth - now.getDate() + 1, 1);
+      document.getElementById('remainDaysHero').textContent = `เหลือ ${remainDays} วันในเดือน`;
+
+      const dailyAllow = Math.max(remainWants / remainDays, 0);
+      document.getElementById('heroDailyAllow').textContent = fmt(dailyAllow);
+      document.getElementById('heroTodaySpent').textContent = fmt(todaySpent);
+
+      const overallPct = Math.round((totalSpent / (income || 1)) * 100);
+      document.getElementById('heroOverallPct').textContent = `${overallPct}% (${fmt(totalSpent)} จาก ${fmt(income)})`;
+      document.getElementById('heroOverallBar').style.width = Math.min(overallPct, 100) + '%';
+
+      // Emergency Goal
+      document.getElementById('planEmergencyGoal').textContent = fmt(bNeeds * 6);
+      document.getElementById('quickHistoryCount').textContent = expenses.length;
+
+      // Donut Chart
+      const C = 238.76;
+      const lNeeds = C * f.needs, lSavings = C * f.savings, lWants = C * f.wants, lGrowth = C * f.growth;
+      document.getElementById('donutNeeds').setAttribute('stroke-dasharray', `${lNeeds} ${C - lNeeds}`);
+      document.getElementById('donutNeeds').setAttribute('stroke-dashoffset', '0');
+      document.getElementById('donutSavings').setAttribute('stroke-dasharray', `${lSavings} ${C - lSavings}`);
+      document.getElementById('donutSavings').setAttribute('stroke-dashoffset', `-${lNeeds}`);
+      document.getElementById('donutWants').setAttribute('stroke-dasharray', `${lWants} ${C - lWants}`);
+      document.getElementById('donutWants').setAttribute('stroke-dashoffset', `-${lNeeds + lSavings}`);
+      document.getElementById('donutGrowth').setAttribute('stroke-dasharray', `${lGrowth} ${C - lGrowth}`);
+      document.getElementById('donutGrowth').setAttribute('stroke-dashoffset', `-${lNeeds + lSavings + lWants}`);
+      document.getElementById('donutTotalText').textContent = fmt(income);
+
+      renderHistoryList();
+    }
+
+    // Render Transaction History Cards
+    function renderHistoryList() {
+      const filter = document.getElementById('mFilterCategory').value;
+      const container = document.getElementById('mobileTransactionList');
+      const emptyState = document.getElementById('mEmptyState');
+
+      const filtered = expenses.filter(x => filter === 'all' || x.category === filter);
+      filtered.sort((a, b) => new Date(b.date) - new Date(a.date) || b.id - a.id);
+
+      container.innerHTML = '';
+      if (filtered.length === 0) {
+        emptyState.classList.remove('hidden');
+      } else {
+        emptyState.classList.add('hidden');
+        filtered.forEach(x => {
+          const meta = categoryMeta[x.category] || { label: x.category, badgeClass: "bg-slate-700 text-slate-300", icon: "💰" };
+          const card = document.createElement('div');
+          card.className = "flex items-center justify-between p-3.5 bg-slate-900 border border-slate-700/80 rounded-xl hover:border-slate-600 transition";
+          card.innerHTML = `
+            <div class="flex items-center gap-3 min-w-0">
+              <span class="w-9 h-9 rounded-xl bg-slate-800 flex items-center justify-center text-lg shrink-0">${meta.icon}</span>
+              <div class="min-w-0">
+                <p class="text-sm font-semibold text-white truncate">${escapeHtml(x.title)}</p>
+                <div class="flex items-center gap-2 mt-0.5">
+                  <span class="text-xs px-2 py-0.5 rounded-full ${meta.badgeClass}">${meta.label}</span>
+                  <span class="text-xs text-slate-400">${formatDateShort(x.date)}</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 shrink-0">
+              <span class="text-base font-bold text-white">${fmt(x.amount)}</span>
+              <button onclick="deleteExpenseItem(${x.id})" title="ลบ" class="p-1.5 text-slate-400 hover:text-rose-400 rounded-lg hover:bg-slate-800 transition">
+                🗑️
+              </button>
+            </div>
+          `;
+          container.appendChild(card);
+        });
+      }
+    }
+
+    function formatDateShort(dateStr) {
+      if (!dateStr) return '';
+      const p = dateStr.split('-');
+      if (p.length === 3) return `${p[2]}/${p[1]}`;
+      return dateStr;
+    }
+
+    function escapeHtml(text) {
+      const d = document.createElement('div');
+      d.textContent = text;
+      return d.innerHTML;
+    }
+
+    // Submit Expense
+    document.getElementById('mobileExpenseForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const amount = parseFloat(document.getElementById('mAmount').value);
+      const title = document.getElementById('mTitle').value.trim();
+      const category = document.getElementById('mCategory').value;
+      const date = document.getElementById('mDate').value;
+
+      if (!title || isNaN(amount) || amount <= 0) return;
+
+      expenses.unshift({
+        id: Date.now(),
+        date: date,
+        title: title,
+        category: category,
+        amount: amount
+      });
+
+      saveData();
+      renderAll();
+
+      // Reset
+      document.getElementById('mAmount').value = '';
+      document.getElementById('mTitle').value = '';
+
+      showToast(`บันทึก ${title} (${fmt(amount)}) แล้ว!`);
+      
+      setTimeout(() => switchTab('overview'), 500);
+    });
+
+    window.deleteExpenseItem = function(id) {
+      if (confirm('คุณต้องการลบรายการนี้ใช่หรือไม่?')) {
+        expenses = expenses.filter(x => x.id !== id);
+        saveData();
+        renderAll();
+        showToast('ลบรายการแล้ว');
+      }
+    };
+
+    function clearAllExpensesPrompt() {
+      if (confirm('คำเตือน: คุณต้องการล้างประวัติค่าใช้จ่ายทั้งหมดใช่หรือไม่?')) {
+        expenses = [];
+        saveData();
+        renderAll();
+        toggleSettingsModal();
+        showToast('ล้างข้อมูลเรียบร้อย');
+      }
+    }
+
+    function exportCSV() {
+      if (expenses.length === 0) {
+        alert('ยังไม่มีข้อมูล');
+        return;
+      }
+      let csv = "\uFEFFวันที่,รายการ,กระเป๋าเงิน,จำนวนเงิน\n";
+      expenses.forEach(x => {
+        csv += `"${x.date}","${x.title.replace(/"/g, '""')}","${categoryMeta[x.category]?.label || x.category}",${x.amount}\n`;
+      });
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `รายจ่าย_${new Date().toISOString().split('T')[0]}.csv`;
+      a.click();
+    }
+
+    // Init Date
+    const todayISO = new Date().toISOString().split('T')[0];
+    document.getElementById('mDate').value = todayISO;
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) {
+        document.querySelectorAll('main > section').forEach(s => s.classList.remove('hidden'));
+      } else {
+        switchTab(activeTab);
+      }
+    });
+
+    loadData();
+    renderAll();
+    switchTab('overview');
+  </script>
+</body>
+</html>
